@@ -1,0 +1,40 @@
+Taks -> 
+Rest API - JSON
+
+GET /api/users -> List all users - Done
+
+GET /api/users/1 -> Get the user with id 1 - Done
+GET /api/users/2 -> Get the user with id 2 - Done
+
+POST /api/users -> Create new user 
+
+PATCH /api/users/1 -> Edit user with id 1
+PATCH /api/users/2 -> Edit user with id 2
+
+DELETE /api/users/1 -> Delete user with id 1
+DELETE /api/users/2 -> Delete user with id 2
+
+SOLUTION -> 
+For this project firstly we need data and we did not connect any DB yet, so we use [ mockaroo.com ] for fake data
+
+To make a hybrid server we make our API like this.
+1 -> if use makes a get req on /users then we render an HTML page.
+2 -> if use makes a get req on /api/users then we send response in JSON format.
+
+Dynamic Path Parameter-
+GET api/users/:id
+id -> Variable | Dynamic
+
+req.body -> 
+Data we send form the frontend is availiable in req.body.
+But the express did not know what kind of data is comming from frontend, thats why we use a middleware
+app.use(express.urlencoded({ extended : false}))
+This middleware will put form data in req.body.
+
+Middleware -> 
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
+Middleware functions can perform the following tasks:
+1 -> Execute any code.
+2 -> Make changes to the request and the response objects.
+3 -> End the request-response cycle.
+4 -> Call the next middleware function in the stack.
